@@ -29,7 +29,7 @@ modules:
     - virt-viewer
     - power-profiles-daemon
     - neovim
-    - zsh
+    - steam
     - hyprland
     remove:
       - firefox # default firefox removed in favor of flatpak
