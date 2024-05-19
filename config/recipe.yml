@@ -4,7 +4,7 @@ name: ublue
 description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/sericea-main
-image-version: 39 # latest is also supported if you want new updates ASAP
+image-version: 40 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
@@ -32,8 +32,12 @@ modules:
     - steam
     - hyprland
     remove:
+      - sway
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+  - type: rpm-ostree
+    install:
+    - hyprland
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
