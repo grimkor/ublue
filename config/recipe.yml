@@ -29,15 +29,11 @@ modules:
     - virt-viewer
     - power-profiles-daemon
     - neovim
-    - steam
+    - zsh
     - hyprland
     remove:
-      - sway
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-  - type: rpm-ostree
-    install:
-    - hyprland
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
